@@ -1,0 +1,28 @@
+---
+ip: "192.168.10.100"
+memory: 512
+cpus: 1
+
+networking:
+    - public: true
+
+folders:
+    - map: /www
+      to: /var/www/html
+      type: nfs
+#    - map: database
+#      to: /srv/database
+#      type: nfs
+    - map: /ssl
+      to: /etc/apache2/ssl
+      type: nfs
+
+# PHP options: 5 (uses 5.6) or 7
+php: 7.2
+
+# Uses nginx + PHP-FPM. If set to false, uses Apache.
+nginx: false
+
+# ports:
+#     - guest: 80 
+#       host: 3000
