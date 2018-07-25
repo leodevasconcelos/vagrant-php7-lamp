@@ -31,4 +31,5 @@ Vagrant.configure("2") do |config|
     v.memory = server_memory
     v.name = "server-php7"
   end
+  config.vm.provision :shell, :path => "setup.sh"
 end
